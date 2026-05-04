@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>مدرسة شبشير الحصة للتعليم الأساسي</title>
+  <meta name="description" content="مدرسة شبشير الحصة للتعليم الأساسي — المرحلة الابتدائية والإعدادية — محافظة الغربية" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800;900&family=Cairo:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css?v=20260504-contact-safe1" />
+  <style>
+    :root {
+      --bg:#f9f7f2;--surface:#ffffff;--surface-2:#f2efe6;
+      --text:#1a1a2e;--muted:#6b7280;
+      --primary:#2d5a27;--primary-light:#e8f5e3;--primary-2:#3d7a35;
+      --accent:#c9932a;--accent-light:#fef3dc;--accent-2:#8b1a1a;
+      --navy:#0f2744;--border:rgba(45,90,39,.12);
+      --shadow:0 4px 24px rgba(45,90,39,.10);--shadow-lg:0 16px 48px rgba(45,90,39,.15);
+      --radius:16px;--radius-lg:24px;
+    }
+    body[data-theme="dark"]{
+      --bg:#0d1410;--surface:#111a0f;--surface-2:#0a110a;
+      --text:#e8f0e4;--muted:#9ab090;
+      --primary:#5d9e52;--primary-light:#1a2e18;--primary-2:#72bb66;
+      --accent:#d4a43a;--accent-light:#2a1e08;--accent-2:#e05252;
+      --navy:#0a1e38;--border:rgba(93,158,82,.18);
+      --shadow:0 4px 24px rgba(0,0,0,.4);--shadow-lg:0 16px 48px rgba(0,0,0,.5);
+    }
+    *{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{font-family:'Cairo',sans-serif;background:var(--bg);color:var(--text);line-height:1.8}
+    a{color:inherit;text-decoration:none}
+    img{max-width:100%;display:block}
+    .container{width:min(1200px,calc(100% - 32px));margin-inline:auto}
+
+
+    /* أزرار محتوى الصفحة — مستخدمة في الهيرو والأقسام */
+    .btn-primary{background:var(--primary);color:#fff;box-shadow:0 4px 16px rgba(45,90,39,.3)}
+    .btn-primary:hover{background:var(--primary-2);transform:translateY(-2px)}
+    .btn-outline{background:transparent;color:var(--primary);border:2px solid var(--primary)}
+    .btn-outline:hover{background:var(--primary-light)}
+
+    /* HERO */
+    .hero-school{position:relative;min-height:88vh;background:url('images/hero.jpg') center/cover no-repeat;display:flex;align-items:center;overflow:hidden}
+    .hero-overlay{position:absolute;inset:0;background:linear-gradient(105deg,rgba(15,39,68,.88) 0%,rgba(15,39,68,.72) 40%,rgba(45,90,39,.42) 75%,rgba(45,90,39,.18) 100%)}
+    body[data-theme="dark"] .hero-overlay{background:linear-gradient(105deg,rgba(5,12,8,.95) 0%,rgba(5,12,8,.85) 50%,rgba(15,39,68,.4) 100%)}
+    .container.hero-layout{position:relative;z-index:1;width:min(1200px,calc(100% - 32px));margin-inline:auto;padding:72px 0 52px}
+    .hero-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(360px,420px);gap:clamp(34px,4vw,62px);align-items:center;direction:rtl}
+    .hero-content{max-width:560px;justify-self:start;text-align:right;padding-inline:0}
+    .hero-title-wrap{display:grid;gap:6px;margin-bottom:12px}
+    .hero-eyebrow{font-size:.9rem;font-weight:800;color:rgba(255,255,255,.8)}
+    .hero-content h1{font-family:'Tajawal',sans-serif;font-size:clamp(1.3rem,2.2vw,1.85rem);font-weight:900;color:#fff;line-height:1.35;margin:0;max-width:100%;white-space:nowrap;letter-spacing:-.01em}
+    .hero-content h1 .line2{color:#f0c060;display:block;white-space:nowrap}
+    .hero-sub{font-size:.95rem;color:rgba(255,255,255,.82);margin-bottom:22px;max-width:500px;line-height:1.9}
+    .hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:22px}
+    .hero-btn-soft{background:rgba(255,255,255,.14);color:#fff;border:1px solid rgba(255,255,255,.3);backdrop-filter:blur(6px)}
+    .hero-btn-soft:hover{background:rgba(255,255,255,.2)}
+
+    /* HERO STAGES PANEL — moved from the old homepage section into the hero safely */
+    .hero-card-panel{justify-self:stretch;align-self:center;min-width:0;width:100%;max-width:560px}
+    .hero-education-card{position:relative;padding:22px;border-radius:26px;background:rgba(8,24,22,.76);border:1px solid rgba(93,158,82,.30);box-shadow:0 28px 70px rgba(0,0,0,.28),inset 0 1px 0 rgba(255,255,255,.06);backdrop-filter:blur(22px) saturate(125%);-webkit-backdrop-filter:blur(22px) saturate(125%);color:#fff;overflow:hidden}
+    .hero-education-card::before{content:'';position:absolute;inset:0;background:radial-gradient(circle at 12% 8%,rgba(93,158,82,.20),transparent 32%),radial-gradient(circle at 90% 88%,rgba(212,164,58,.13),transparent 36%);pointer-events:none}
+    .hero-education-head{position:relative;z-index:1;display:flex;align-items:center;justify-content:space-between;gap:14px;margin-bottom:16px;padding-bottom:14px;border-bottom:1px solid rgba(255,255,255,.10)}
+    .hero-education-head .section-tag{margin:0;white-space:nowrap;background:rgba(93,158,82,.20);color:#8fd07f;border:1px solid rgba(93,158,82,.28)}
+    .hero-education-head h2{font-family:'Tajawal',sans-serif;font-size:clamp(1.1rem,1.8vw,1.45rem);line-height:1.35;margin:0;color:#f7fbf2;font-weight:900}
+    .hero-stage-list{position:relative;z-index:1;display:grid;gap:12px}
+    .hero-stage-mini{position:relative;display:grid;grid-template-columns:auto minmax(0,1fr);gap:14px;align-items:start;padding:17px;border-radius:21px;background:rgba(9,32,17,.72);border:1px solid rgba(93,158,82,.24);box-shadow:inset 0 1px 0 rgba(255,255,255,.05);overflow:hidden}
+    .hero-stage-mini::after{content:'';position:absolute;top:0;left:0;width:96px;height:96px;border-radius:0 0 96px 0;opacity:.12;background:var(--primary)}
+    .hero-stage-mini.c-gold{border-color:rgba(212,164,58,.32);background:rgba(33,29,10,.60)}
+    .hero-stage-mini.c-gold::after{background:var(--accent)}
+    .hero-stage-icon{width:50px;height:50px;border-radius:16px;display:flex;align-items:center;justify-content:center;font-size:1.4rem;background:rgba(93,158,82,.18);border:1px solid rgba(93,158,82,.20);position:relative;z-index:1}
+    .hero-stage-mini.c-gold .hero-stage-icon{background:rgba(212,164,58,.18);border-color:rgba(212,164,58,.22)}
+    .hero-stage-content{position:relative;z-index:1}
+    .hero-stage-row{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:8px}
+    .hero-stage-row h3{font-family:'Tajawal',sans-serif;font-size:1rem;font-weight:900;line-height:1.35;margin:0;color:#f7fbf2}
+    .hero-stage-badge{display:inline-flex;align-items:center;padding:4px 11px;border-radius:999px;font-size:.72rem;font-weight:900;background:rgba(93,158,82,.18);color:#91d083;white-space:nowrap}
+    .hero-stage-mini.c-gold .hero-stage-badge{background:rgba(212,164,58,.18);color:#f0c060}
+    .hero-stage-content p{font-size:.82rem;line-height:1.8;color:rgba(232,240,228,.78);margin:0 0 10px}
+    .hero-stage-feats{display:grid;gap:6px;margin:0;padding:0;list-style:none}
+    .hero-stage-feats li{display:flex;align-items:center;gap:8px;font-size:.78rem;font-weight:800;color:rgba(255,255,255,.86);line-height:1.55}
+    .hero-stage-feats li::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--primary);flex-shrink:0}
+    .hero-stage-mini.c-gold .hero-stage-feats li::before{background:var(--accent)}
+
+    /* TICKER */
+    .ticker-wrap{background:var(--navy);color:#e8f4ff;overflow:hidden}
+    .ticker-inner{display:flex;align-items:center;height:42px}
+    .ticker-label{background:var(--accent);color:#fff;padding:0 16px;height:100%;display:flex;align-items:center;font-weight:900;font-size:.86rem;white-space:nowrap;flex-shrink:0}
+    .ticker-track{overflow:hidden;flex:1}
+    .ticker-items{display:inline-flex;gap:36px;animation:ticker 35s linear infinite;white-space:nowrap;font-size:.86rem;font-weight:600}
+    @keyframes ticker{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+    .ticker-sep{color:var(--accent)}
+
+    /* SECTIONS */
+    .section{padding:80px 0}
+    .section-cream{background:var(--surface-2)}
+    .section-navy{background:var(--navy);color:#e8f4ff}
+    .section-head{text-align:center;margin-bottom:48px}
+    .section-tag{display:inline-block;padding:6px 16px;border-radius:999px;font-size:.82rem;font-weight:800;margin-bottom:12px}
+    .tag-green{background:var(--primary-light);color:var(--primary)}
+    .tag-gold{background:var(--accent-light);color:var(--accent)}
+    .tag-navy{background:rgba(15,39,68,.1);color:var(--navy)}
+    body[data-theme="dark"] .tag-navy{background:rgba(255,255,255,.1);color:#b8d4f8}
+    .tag-white{background:rgba(255,255,255,.2);color:#fff}
+    .section-head h2{font-family:'Tajawal',sans-serif;font-size:clamp(1.8rem,3.5vw,2.5rem);font-weight:900;margin-bottom:10px;line-height:1.3}
+    .section-head p{color:var(--muted);font-size:1rem}
+    .section-navy .section-head h2{color:#fff}.section-navy .section-head p{color:#9ab0c8}
+
+    /* ABOUT — modern home section */
+    .home-about-modern{position:relative;overflow:hidden;background:linear-gradient(180deg,#0b1828 0%,#0e1f34 54%,#0d1b2d 100%);color:#eef7ea}
+    .home-about-modern::before{content:'';position:absolute;inset:-20% -8% auto auto;width:520px;height:520px;border-radius:50%;background:radial-gradient(circle,rgba(93,158,82,.16),transparent 64%);pointer-events:none}
+    .home-about-modern::after{content:'';position:absolute;inset:auto auto -22% -10%;width:520px;height:520px;border-radius:50%;background:radial-gradient(circle,rgba(212,164,58,.12),transparent 66%);pointer-events:none}
+    .about-grid{display:grid;grid-template-columns:minmax(320px,560px) minmax(0,1fr);gap:clamp(42px,5vw,76px);align-items:center;position:relative;z-index:1}
+    .about-img{position:relative;border-radius:28px;overflow:hidden;border:1px solid rgba(255,255,255,.14);box-shadow:0 30px 80px rgba(0,0,0,.35),0 0 0 1px rgba(93,158,82,.12);background:rgba(255,255,255,.04)}
+    .about-img::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(5,12,20,.05),rgba(5,12,20,.22));pointer-events:none}
+    .about-img img{width:100%;aspect-ratio:4/3;object-fit:cover;transform:scale(1.01)}
+    .about-badge{position:absolute;bottom:18px;right:18px;z-index:1;background:linear-gradient(135deg,#f0bd45,#d4a43a);color:#fff;padding:12px 18px;border-radius:16px;font-weight:900;font-size:.9rem;box-shadow:0 16px 35px rgba(212,164,58,.28)}
+    .about-content{max-width:650px}
+    .about-content .section-tag{background:rgba(93,158,82,.22)!important;color:#7fd36f!important;border:1px solid rgba(93,158,82,.24)}
+    .about-content h2{font-family:'Tajawal',sans-serif;font-size:clamp(2rem,3vw,2.75rem);font-weight:900;margin-bottom:18px;line-height:1.25;color:#f8fbf2;letter-spacing:-.02em}
+    .about-content > p{color:rgba(222,236,215,.72);margin-bottom:26px;font-size:1rem;line-height:2.05;max-width:620px}
+    .about-points{display:grid;gap:12px;margin-bottom:30px}
+    .about-pt{display:flex;align-items:center;justify-content:space-between;flex-direction:row-reverse;gap:14px;padding:15px 18px;background:rgba(7,25,14,.72);border:1px solid rgba(93,158,82,.15);border-radius:18px;font-size:.95rem;font-weight:900;color:#f2f8ed;box-shadow:inset 0 1px 0 rgba(255,255,255,.04)}
+    .apt-icon{width:36px;height:36px;border-radius:12px;background:rgba(93,158,82,.20);border:1px solid rgba(93,158,82,.18);display:flex;align-items:center;justify-content:center;font-size:1rem;flex-shrink:0}
+    .home-about-modern .btn-primary{border-radius:999px;background:linear-gradient(135deg,#5d9e52,#72bb66);border:1px solid rgba(255,255,255,.12);box-shadow:0 14px 35px rgba(93,158,82,.24);padding-inline:24px}
+    .home-about-modern .btn-primary:hover{background:linear-gradient(135deg,#72bb66,#5d9e52);transform:translateY(-2px)}
+
+    /* CONTACT */
+    .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:26px}
+    .contact-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-lg);padding:30px;box-shadow:var(--shadow)}
+    .contact-card h3{font-size:1.05rem;font-weight:800;margin-bottom:20px;padding-bottom:12px;border-bottom:2px solid var(--primary-light);display:flex;align-items:center;gap:10px;color:var(--primary)}
+    .contact-items{display:grid;gap:14px}
+    .contact-item{display:flex;align-items:center;gap:12px;padding:13px;background:var(--surface-2);border-radius:var(--radius)}
+    .c-icon{width:40px;height:40px;border-radius:11px;background:var(--primary-light);display:flex;align-items:center;justify-content:center;font-size:1rem;flex-shrink:0}
+    .contact-item strong{display:block;font-size:.8rem;color:var(--muted);font-weight:700}
+    .contact-item span{font-weight:800;font-size:.92rem}
+    .contact-form{display:grid;gap:12px}
+    .ff label{display:block;font-weight:700;font-size:.86rem;color:var(--muted);margin-bottom:5px}
+    .ff input,.ff textarea{width:100%;padding:11px 15px;background:var(--surface-2);border:1px solid var(--border);border-radius:var(--radius);font-family:'Cairo',sans-serif;font-size:.9rem;color:var(--text);transition:border-color .2s}
+    .ff input:focus,.ff textarea:focus{outline:none;border-color:var(--primary)}
+    .ff textarea{min-height:96px;resize:vertical}
+
+    /* UTILS */
+    .back-to-top{position:fixed;bottom:20px;left:20px;width:44px;height:44px;border-radius:50%;background:var(--primary);color:#fff;border:none;font-size:1.05rem;cursor:pointer;box-shadow:var(--shadow-lg);opacity:0;visibility:hidden;transition:all .25s;z-index:99;display:flex;align-items:center;justify-content:center}
+    .back-to-top.is-visible{opacity:1;visibility:visible}
+    .back-to-top:hover{background:var(--primary-2);transform:translateY(-2px)}
+    .skip-link{position:absolute;right:-9999px}.skip-link:focus{right:16px;top:16px;background:#fff;padding:8px 16px;border-radius:10px;z-index:1000}
+    .reveal{opacity:0;transform:translateY(22px);transition:.65s ease}
+    .reveal.is-visible{opacity:1;transform:none}
+    .delay-1{transition-delay:.1s}.delay-2{transition-delay:.2s}.delay-3{transition-delay:.3s}
+    .text-center{text-align:center}
+    .mt-8{margin-top:32px}
+
+    /* RESPONSIVE */
+    @media(max-width:1080px){
+      .hero-grid,.about-grid,.contact-grid{grid-template-columns:1fr}
+      .nav-cta{display:none}
+    }
+    @media(max-width:640px){
+      .hero-content h1{font-size:clamp(1.2rem,4vw,1.6rem);white-space:nowrap}
+      .hero-education-card{padding:18px;border-radius:22px}
+      .hero-stage-mini{grid-template-columns:1fr}
+      .hero-stage-row{align-items:flex-start}
+      .section{padding:56px 0}
+    }
+
+    /* Final responsive tuning */
+    .hero-grid{align-items:center}
+    .hero-content h1 .line2{display:block;margin-inline-start:0}
+    .ticker-items{padding-inline:24px}
+    @media(max-width:1080px){
+      .hero-grid{grid-template-columns:1fr}
+      .hero-content{max-width:100%;padding-inline:0;justify-self:center;text-align:center}
+      .hero-sub{margin-inline:auto}
+      .hero-actions{justify-content:center}
+      .hero-card-panel{max-width:620px;justify-self:center}
+    }
+    @media(max-width:640px){
+      .hero-title-wrap{gap:6px}
+      .hero-eyebrow{font-size:.92rem}
+      .hero-content h1{font-size:clamp(1.6rem,7vw,2.15rem);line-height:1.24;max-width:100%}
+      .hero-content h1 .line2{display:block;margin-inline-start:0}
+      .hero-actions .btn{width:100%}
+      .hero-school{padding-top:10px;min-height:auto}
+      .ticker-inner{height:auto;flex-direction:column;align-items:stretch}
+      .ticker-label{justify-content:center;padding:10px 16px}
+      .ticker-track{padding:10px 0}
+    }
+
+  
+    .results-bullets li{margin:8px 0}
+    .news-feat-body h3,.news-sm-body h4{font-size:1rem !important;line-height:1.6 !important}
+    .contact-form input[disabled], .contact-form textarea[disabled]{background:var(--surface-2);cursor:not-allowed;opacity:.9}
+    @media (max-width: 760px){
+      .hero-content h1{font-size:clamp(1.1rem,5vw,1.45rem);white-space:nowrap}
+      .hero-sub{font-size:.92rem;line-height:1.85}
+      .hero-actions{flex-direction:column;align-items:stretch}
+      .hero-actions .btn{width:100%;justify-content:center}
+      .hero-education-head{flex-direction:column;align-items:center;text-align:center}
+      .contact-grid,.about-grid{grid-template-columns:1fr !important}
+      .ticker-label{font-size:.82rem;min-width:auto;padding:10px 12px}
+      .ticker-items{font-size:.84rem}
+    }
+
+  
+
+    /* CONTACT — deploy-safe new spirit block */
+    .home-contact-modern{background:linear-gradient(180deg,#0a1625 0%,#101f31 100%);position:relative;overflow:hidden}
+    .home-contact-modern::before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 18% 20%,rgba(93,158,82,.16),transparent 32%),radial-gradient(circle at 78% 70%,rgba(201,147,42,.10),transparent 35%);pointer-events:none}
+    .home-contact-modern>.container{position:relative;z-index:1}
+    .home-contact-head .section-tag{background:rgba(93,158,82,.20);color:#74c365;border:1px solid rgba(93,158,82,.22)}
+    .home-contact-grid{align-items:stretch}
+    .home-contact-card{background:linear-gradient(145deg,rgba(14,44,25,.94),rgba(7,25,15,.94));border:1px solid rgba(93,158,82,.24);box-shadow:0 24px 70px rgba(0,0,0,.24)}
+    .home-contact-card h3{color:#74c365;border-bottom-color:rgba(93,158,82,.22)}
+    .home-contact-card .contact-item{background:rgba(2,14,8,.48);border:1px solid rgba(93,158,82,.16)}
+    .home-contact-card .contact-item a{color:#eef7e9;text-decoration:none}
+    .home-contact-card .contact-item a:hover{color:#74c365}
+    .home-contact-card .c-icon{background:rgba(93,158,82,.16);color:#74c365;display:grid;place-items:center;font-weight:900}
+    .home-contact-card .fb-icon{font-family:Arial,sans-serif;color:#fff;background:#1877f2}
+    .home-contact-action{display:flex;flex-direction:column;justify-content:center;gap:18px}
+    .home-contact-action p{color:#c6d2c0;line-height:1.9;margin:0}
+    .home-contact-mail-btn{width:100%;justify-content:center;border-radius:999px;min-height:56px;background:linear-gradient(135deg,#5da052,#74c365);border:0;color:#fff;box-shadow:0 14px 34px rgba(93,158,82,.26)}
+    .home-contact-note{color:#9fb293;font-size:.92rem;text-align:center}.home-contact-note strong{color:#f4f8ef}
+  </style>
+</head>
+<body class="premium-ui official-page">
+
+<div class="page-progress" aria-hidden="true"><span class="page-progress-bar"></span></div>
+<a class="skip-link" href="#main-content">تخطَّ إلى المحتوى</a>
+
+<div class="top-strip"></div>
+<div class="topbar-sticky-wrap">
+<div id="urgent-bar" hidden></div>
+<header class="topbar" id="topbar">
+  <div class="container nav">
+    <a class="brand" href="index.html" aria-label="الصفحة الرئيسية">
+      <img class="brand-logo" src="images/logo.png" alt="شعار المدرسة" />
+      <div class="brand-text-wrap">
+        <span class="brand-title" id="site-name">مدرسة شبشير الحصة للتعليم الأساسي</span>
+        <span class="brand-sub">للتعليم الأساسي — ابتدائي وإعدادي</span>
+      </div>
+    </a>
+    <button class="menu-toggle" type="button" aria-label="القائمة" aria-expanded="false" aria-controls="main-menu">
+      <span></span><span></span><span></span>
+    </button>
+    <nav class="menu" id="main-menu">
+      <a href="index.html" class="active">الرئيسية</a>
+      <a href="news.html">الأخبار</a>
+      <a href="articles.html">المقالات التعليمية</a>
+      <a href="activities.html">الأنشطة</a>
+      <a href="announcements.html">الإعلانات</a>
+      <a href="about.html">عن المدرسة</a>
+      <a href="results.html" class="menu-results-link" data-section-gated="results" style="display:none">النتائج</a>
+    </nav>
+    <div class="nav-end-group">
+      <a class="btn btn-gold nav-cta nav-results-cta" href="results.html" data-section-gated="results">نتائج الطلاب</a>
+      <div class="topbar-actions">
+        <button class="theme-toggle" type="button" aria-label="تبديل الوضع" title="تبديل الوضع">
+          <span class="theme-toggle-icon theme-toggle-sun">☀️</span>
+          <span class="theme-toggle-icon theme-toggle-moon">🌙</span>
+          <span class="theme-toggle-label">الوضع</span>
+        </button>
+        <a class="topbar-dev-badge" href="https://codekenz.com" target="_blank" rel="noopener" title="تطوير: CodeKenz.com">CodeKenz ⬡</a>
+      </div>
+    </div>
+  </div>
+</header>
+</div><!-- /topbar-sticky-wrap -->
+
+<main id="main-content">
+
+  <!-- HERO -->
+  <section class="hero-school">
+    <div class="hero-overlay"></div>
+    <div class="container hero-layout">
+      <div class="hero-grid">
+        <div class="hero-content">
+          <div class="hero-title-wrap">
+            <div class="hero-eyebrow">المرحلة الابتدائية والإعدادية</div>
+            <h1>مدرسة شبشير الحصة<span class="line2">للتعليم الأساسي</span></h1>
+          </div>
+          <p class="hero-sub">مدرسة رسمية تجمع المرحلة الابتدائية والإعدادية في بيئة تعليمية منظمة ومتكاملة.</p>
+          <div class="hero-actions">
+            <a href="stages.html" class="btn btn-gold">🎓 المراحل التعليمية</a>
+            <a href="news.html" class="btn hero-btn-soft">📰 أخبار المدرسة</a>
+          </div>
+        </div>
+        <aside class="hero-card-panel reveal delay-2" aria-label="المراحل التعليمية">
+          <div class="hero-education-card">
+            <div class="hero-education-head">
+              <span class="section-tag tag-green">المراحل التعليمية</span>
+              <h2>بنية تعليمية متكاملة</h2>
+            </div>
+            <div class="hero-stage-list">
+              <article class="hero-stage-mini c-green">
+                <div class="hero-stage-icon" aria-hidden="true">📘</div>
+                <div class="hero-stage-content">
+                  <div class="hero-stage-row">
+                    <h3>المرحلة الابتدائية</h3>
+                    <span class="hero-stage-badge">ابتدائي</span>
+                  </div>
+                  <p>مرحلة تأسيسية تبني القاعدة المعرفية والمهارية للطالب مع اهتمام كامل بالانضباط والتحصيل.</p>
+                  <ul class="hero-stage-feats">
+                    <li>6 صفوف دراسية من الأول للسادس</li>
+                    <li>متابعة يومية منظمة للأداء الأكاديمي</li>
+                  </ul>
+                </div>
+              </article>
+              <article class="hero-stage-mini c-gold">
+                <div class="hero-stage-icon" aria-hidden="true">📗</div>
+                <div class="hero-stage-content">
+                  <div class="hero-stage-row">
+                    <h3>المرحلة الإعدادية</h3>
+                    <span class="hero-stage-badge">إعدادي</span>
+                  </div>
+                  <p>مرحلة تدعم النضج الأكاديمي وتهيئ الطالب للمرحلة الثانوية مع توجيه تعليمي متخصص.</p>
+                  <ul class="hero-stage-feats">
+                    <li>3 صفوف دراسية من الأول للثالث</li>
+                    <li>محتوى دراسي أعمق وأكثر تخصصًا</li>
+                  </ul>
+                </div>
+              </article>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <!-- TICKER -->
+  <div class="ticker-wrap">
+    <div class="container ticker-inner">
+      <div class="ticker-label">🔔 آخر الأخبار</div>
+      <div class="ticker-track">
+        <div class="ticker-items"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- NEWS -->
+  <section class="section home-news-legacy" id="section-home-news">
+    <div class="container">
+      <div class="section-head reveal home-news-head">
+        <div class="home-news-title-row">
+          <span class="section-kicker home-news-kicker">آخر المستجدات</span>
+          <h2>أخبار المدرسة</h2>
+        </div>
+        <p>تابع آخر الأخبار والفعاليات والإعلانات الرسمية للمدرسة</p>
+      </div>
+      <div id="decap-home-news" class="home-news-panel reveal"></div>
+      <div class="section-cta home-news-cta"><a href="news.html" class="btn outline-dark">عرض كل الأخبار ←</a></div>
+    </div>
+  </section>
+
+  <!-- ANNOUNCEMENTS -->
+  <section class="section home-announcements-legacy" id="section-home-announcements">
+    <div class="container">
+      <div class="section-head reveal home-announcements-head">
+        <div class="home-announcements-title-row">
+          <span class="section-kicker home-announcements-kicker">تنبيهات المدرسة</span>
+          <h2>الإعلانات الرسمية</h2>
+        </div>
+        <p>تابع آخر الإعلانات والتنبيهات الرسمية من إدارة المدرسة</p>
+      </div>
+      <div id="decap-home-announcements" class="home-announcements-panel reveal" aria-live="polite"></div>
+      <div class="section-cta home-announcements-cta"><a href="announcements.html" class="btn home-announcements-all">عرض كل الإعلانات ←</a></div>
+    </div>
+  </section>
+
+
+  <!-- RESULTS -->
+  <section class="section home-results-preview" id="section-home-results">
+    <div class="container">
+      <div class="section-head reveal home-results-head">
+        <span class="section-tag tag-green home-results-kicker">نتائج الطلاب</span>
+        <h2>بوابة النتائج الرسمية</h2>
+        <p>مساحة مهيأة لعرض حالة النتيجة والصفوف المتاحة بعد اعتمادها من لوحة التحكم</p>
+      </div>
+      <div id="decap-home-results" class="home-results-panel reveal" aria-live="polite"></div>
+    </div>
+  </section>
+
+  <!-- ARTICLES -->
+  <section class="section section-cream home-articles-legacy" id="section-home-articles">
+    <div class="container">
+      <div class="section-head reveal home-articles-head">
+        <span class="section-tag tag-green home-articles-kicker">ركن المعرفة</span>
+        <h2>المقالات التعليمية</h2>
+      </div>
+      <div id="decap-home-articles" class="home-articles-grid reveal" aria-live="polite"></div>
+      <div class="section-cta home-articles-cta"><a href="articles.html" class="btn home-articles-all">عرض كل المقالات ←</a></div>
+    </div>
+  </section>
+
+  <!-- ACTIVITIES -->
+  <section class="section home-activities-legacy" id="section-home-activities">
+    <div class="container">
+      <div class="section-head reveal home-activities-head">
+        <span class="section-tag tag-green home-activities-kicker">الحياة المدرسية</span>
+        <h2>أنشطة وفعاليات المدرسة</h2>
+        <p>تابع أحدث الأنشطة والفعاليات المدرسية المنشورة من لوحة التحكم</p>
+      </div>
+      <div id="decap-home-activities" class="home-activities-panel reveal" aria-live="polite"></div>
+      <div class="section-cta home-activities-cta"><a href="activities.html" class="btn home-activities-all">عرض كل الأنشطة ←</a></div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="section home-about-modern" id="about">
+    <div class="container">
+      <div class="about-grid">
+        <div class="about-img reveal">
+          <img src="images/about.jpg" alt="مدرسة شبشير الحصة للتعليم الأساسي" />
+          <div class="about-badge">📍 شبشير الحصة — الغربية</div>
+        </div>
+        <div class="about-content reveal delay-1">
+          <span class="section-tag tag-green" style="margin-bottom:14px;display:inline-block">عن المدرسة</span>
+          <h2>بيئة تعليمية متميزة للمرحلتين</h2>
+          <p>مدرسة شبشير الحصة للتعليم الأساسي مؤسسة تعليمية رسمية تخدم أبناء المجتمع المحلي في المرحلتين الابتدائية والإعدادية، بمنظومة مدرسية منظمة ومتابعة تربوية مستمرة.</p>
+          <div class="about-points">
+            <div class="about-pt"><div class="apt-icon">📚</div>تحصيل دراسي متميز ومتابعة مستمرة لكل طالب</div>
+            <div class="about-pt"><div class="apt-icon">🎨</div>أنشطة تعليمية وترفيهية تناسب المرحلتين</div>
+            <div class="about-pt"><div class="apt-icon">🕐</div>فترة دراسية واحدة — الأحد إلى الخميس</div>
+            <div class="about-pt"><div class="apt-icon">🤝</div>شراكة فاعلة مع أولياء الأمور والمجتمع</div>
+          </div>
+          <a href="about.html" class="btn btn-primary">اقرأ أكثر عن المدرسة ←</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="section home-contact-modern" id="contact">
+    <div class="container">
+      <div class="section-head reveal home-contact-head">
+        <span class="section-tag tag-green">تواصل معنا</span>
+        <h2>بيانات التواصل الرسمية</h2>
+        <p>البريد الإلكتروني والصفحة الرسمية للمدرسة في مساحة واضحة وسهلة الاستخدام.</p>
+      </div>
+      <div class="contact-grid home-contact-grid">
+        <div class="contact-card home-contact-card reveal">
+          <h3>📋 بيانات المدرسة</h3>
+          <div class="contact-items">
+            <div class="contact-item"><div class="c-icon">📍</div><div><strong>العنوان</strong><span>شبشير الحصة — محافظة الغربية</span></div></div>
+            <div class="contact-item"><div class="c-icon">✉️</div><div><strong>البريد الإلكتروني</strong><span><a href="mailto:shabsheer.school@gmail.com">shabsheer.school@gmail.com</a></span></div></div>
+            <div class="contact-item"><div class="c-icon fb-icon">f</div><div><strong>فيسبوك</strong><span><a href="https://www.facebook.com/profile.php?id=100051318836197" target="_blank" rel="noopener">الصفحة الرسمية للمدرسة</a></span></div></div>
+          </div>
+        </div>
+        <div class="contact-card home-contact-card home-contact-action reveal delay-1">
+          <h3>✉️ راسل المدرسة عبر البريد</h3>
+          <p>للاستفسارات والرسائل الرسمية، يمكن التواصل مباشرة عبر البريد الإلكتروني الخاص بالمدرسة.</p>
+          <a class="btn btn-primary home-contact-mail-btn" href="mailto:shabsheer.school@gmail.com">فتح البريد الإلكتروني ←</a>
+          <div class="home-contact-note">البريد الرسمي: <strong>shabsheer.school@gmail.com</strong></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-main">
+
+      <!-- Brand -->
+      <div class="footer-col">
+        <div class="footer-brand">
+          <img src="images/logo.png" alt="شعار المدرسة" class="footer-logo" />
+          <div class="footer-brand-name" id="footer-school-name">مدرسة شبشير الحصة<br>للتعليم الأساسي</div>
+        </div>
+        <p class="footer-desc">الموقع الرسمي لمدرسة شبشير الحصة للتعليم الأساسي لمتابعة الأخبار والأنشطة والمحتوى التعليمي.</p>
+        <div class="footer-social">
+          <a href="https://www.facebook.com/profile.php?id=100051318836197" target="_blank" rel="noopener noreferrer" aria-label="فيسبوك" data-fb-link class="footer-facebook-link">f</a>
+        </div>
+      </div>
+
+      <!-- روابط سريعة -->
+      <div class="footer-col">
+        <h4>روابط سريعة</h4>
+        <div class="footer-links">
+          <a href="index.html">الرئيسية</a>
+          <a href="news.html">الأخبار</a>
+          <a href="activities.html">الأنشطة</a>
+          <a href="articles.html">المقالات التعليمية</a>
+        </div>
+      </div>
+
+      <!-- خدمات المدرسة -->
+      <div class="footer-col">
+        <h4>خدمات المدرسة</h4>
+        <div class="footer-links">
+          <a href="announcements.html">الإعلانات</a>
+          <a href="about.html">عن المدرسة</a>
+          <a href="contact.html">تواصل معنا</a>
+        </div>
+      </div>
+
+      <!-- معلومات التواصل -->
+      <div class="footer-col">
+        <h4>معلومات التواصل</h4>
+        <div class="footer-contact-item">📍 <span id="footer-address">شبشير الحصة — محافظة الغربية</span></div>
+        <div class="footer-contact-item" id="footer-email-item" hidden>✉️ <a id="footer-email-link" href="#"><span id="footer-email"></span></a></div>
+      </div>
+
+    </div>
+    <div class="footer-bottom">
+      <p>جميع الحقوق محفوظة © 2026 — <span id="footer-school-name-bottom">مدرسة شبشير الحصة للتعليم الأساسي</span></p>
+      <p>تطوير وتصميم: <a href="https://codekenz.com" target="_blank" rel="noopener">CodeKenz.com</a></p>
+    </div>
+  </div>
+</footer>
+
+<button class="back-to-top" aria-label="العودة للأعلى">↑</button>
+<script src="js/main.js?v=20260504-contact-safe1"></script>
+
+  <script type="module" src="js/app.js?v=20260504-contact-safe1"></script>
+</body>
+</html>
