@@ -1,4 +1,0 @@
-User-agent: *
-Allow: /
-
-Sitemap: https://mahmo84.github.io/shabsheer-basic-education/sitemap.xml
